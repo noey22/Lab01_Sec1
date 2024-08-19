@@ -1,42 +1,32 @@
-'use client'
 import { sculptureList } from "./data";
 import BookStatus from "./BookStatus";
-import { Bars3Icon, BellIcon, XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
+ 
 export default function Example() {
   return (
-    
 
+    <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">สินค้าทั้งหมด</h2>
+      <h2 className="text-3xl font-bold tracking-tight text-cyan-300 sm:text-4xl">นิยายจีน</h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {sculptureList.map((sculpture) => (
-            <div key={sculpture.Code} className="group relative border border-gray-300 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg transition-shadow duration-200">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-x-8">
+          {sculptureList.map((sculptureList) => (
+            <a key={sculptureList.Code} href={sculptureList.href} className="group">
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <img
-                  alt={sculpture.Title}
-                  src={sculpture.Cover}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  src={sculptureList.Cover}
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <a href={sculpture.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {sculpture.Title}
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{sculpture.Category}</p>
-                  <BookStatus Bestseller={sculpture.Bestseller} Recommended={sculpture.Recommended} />
-                </div>
-                <p className="text-sm font-medium text-gray-900">{sculpture.Price}</p>
-              </div>
-            </div>
+              <h3 className="mt-1 text-lg text-gray-700">{sculptureList.Title}</h3>
+              <p className="mt-1 text-lg font-medium text-gray-900">ราคาปก:{sculptureList.Price}</p>
+              <p className="mt-1 text-sm text-gray-900">{sculptureList.Category}</p>
+              <p className="mt-1 text-sm text-red-500">ชื่อผู้แต่ง: {sculptureList.Author}</p>
+              <BookStatus Bestseller={sculptureList.Bestseller} Recommended={sculptureList.Recommended} />
+            </a>
           ))}
         </div>
       </div>
-
+    </div>
   )
 }
