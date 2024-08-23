@@ -11,18 +11,18 @@ export default function Example() {
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-x-8">
           {sculptureList.map((sculptureList) => (
-            <a key={sculptureList.Code} href={sculptureList.href} className="group">
+            <a key={sculptureList.code} href={sculptureList.href} className="group">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <img
-                  src={sculptureList.Cover}
+                  src={sculptureList.cover}
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-1 text-lg text-gray-700">{sculptureList.Title}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">ราคาปก:{sculptureList.Price}</p>
-              <p className="mt-1 text-sm text-gray-900">{sculptureList.Category}</p>
-              <p className="mt-1 text-sm text-red-500">ชื่อผู้แต่ง: {sculptureList.Author}</p>
-              <BookStatus Bestseller={sculptureList.Bestseller} Recommended={sculptureList.Recommended} />
+              <h3 className="mt-1 text-lg text-gray-700">{sculptureList.title}</h3>
+              <p className="mt-1 text-lg font-medium text-gray-900">ราคาปก:{sculptureList.price}</p>
+              <p className="mt-1 text-sm text-gray-900">{sculptureList.category}</p>
+              <p className="mt-1 text-sm text-red-500">ชื่อผู้แต่ง: {sculptureList.author}</p>
+              <BookStatus Bestseller={sculptureList.bestseller} Recommended={sculptureList.recommended} />
             </a>
           ))}
         </div>
