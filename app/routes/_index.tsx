@@ -21,6 +21,8 @@ export default function Example() {
               <h3 className="mt-1 text-lg text-gray-700">{sculptureList.title}</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">ราคาปก:{sculptureList.price}</p>
               <p className="mt-1 text-sm text-gray-900">{sculptureList.category}</p>
+              <p className="mt-1 text-sm text-gray-900">โปรโมชั่น:{sculptureList.promotion}</p>
+              <p className="mt-1 text-sm text-gray-900">รายละเอียดหนังสือ: {sculptureList.betails}</p>
               <p className="mt-1 text-sm text-red-500">ชื่อผู้แต่ง: {sculptureList.author}</p>
               <BookStatus Bestseller={sculptureList.bestseller} Recommended={sculptureList.recommended} />
             </a>
