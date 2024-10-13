@@ -15,8 +15,7 @@ export default function Example() {
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <img
                   src={sculptureList.cover}
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
-                />
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"/>
               </div>
               <h3 className="mt-1 text-lg text-gray-700">{sculptureList.title}</h3>
               <p className="mt-1 text-lg font-medium text-gray-900">ราคาปก:{sculptureList.price}</p>
@@ -24,6 +23,7 @@ export default function Example() {
               <p className="mt-1 text-sm text-gray-900">โปรโมชั่น:{sculptureList.promotion}</p>
               <p className="mt-1 text-sm text-gray-900">รายละเอียดหนังสือ: {sculptureList.betails}</p>
               <p className="mt-1 text-sm text-red-500">ชื่อผู้แต่ง: {sculptureList.author}</p>
+
               <BookStatus Bestseller={sculptureList.bestseller} Recommended={sculptureList.recommended} />
             </a>
           ))}
